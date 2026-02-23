@@ -11,24 +11,24 @@ This project was developed as a college-level ML laboratory project integrating 
 
 ---
 
-🚀 Features
+Features
 
-1️⃣ Regression Model
+1. Regression Model
 Predicts estimated median house value based on socio-economic and geographic features.
 
-2️⃣ Classification Model
+2. Classification Model
 Classifies housing price into:
 - Low
 - Medium
 - High
 
-3️⃣ Clustering (KMeans)
+3️. Clustering (KMeans)
 Segments regions into clusters such as:
 - Coastal premium zones
 - Suburban balanced regions
 - Inland lower-income areas
 
-4️⃣ Market Visualization
+4️. Market Visualization
 Displays:
 - Sample housing market data
 - User prediction highlighted in red
@@ -36,7 +36,7 @@ Displays:
 
 ---
 
-🧠 Machine Learning Techniques Used
+Machine Learning Techniques Used
 
 - Linear Regression / Multiple Regression
 - Random Forest Classifier
@@ -47,7 +47,7 @@ Displays:
 
 ---
 
-📊 Dataset
+Dataset
 
 The project uses the **California Housing Dataset**, containing features such as:
 
