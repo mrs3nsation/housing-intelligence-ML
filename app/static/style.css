@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     z-index: 1000;
 }
 
@@ -62,7 +62,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 48px;     
+    font-size: 48px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -82,7 +82,7 @@ body {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
@@ -96,6 +96,7 @@ body {
     padding: 100px 100px;
     background: linear-gradient(to bottom, #F4F1E8, #EFE9DC);
 }
+
 .section h2 {
     text-align: center;
     margin-bottom: 50px;
@@ -120,7 +121,7 @@ body {
     text-align: center;
     transition: all 0.35s ease;
     transform: translateY(0);
-    border: 1px solid rgba(96,108,56,0.08);
+    border: 1px solid rgba(96, 108, 56, 0.08);
 }
 
 .info-card:hover {
@@ -132,15 +133,15 @@ body {
 
 .info-card img {
     width: 100%;
-    height: 230px;           
-    object-fit: cover;       
+    height: 230px;
+    object-fit: cover;
     border-radius: 14px;
     margin-bottom: 18px;
     transition: transform 0.35s ease;
 }
 
 .info-card:hover img {
-    transform: scale(1.03);  
+    transform: scale(1.03);
 }
 
 /* ANALYSIS PAGE — CENTERED STACKED LAYOUT */
@@ -163,6 +164,7 @@ body {
     background: rgba(244, 241, 232, 0.65);
     z-index: 0;
 }
+
 .analysis-container {
     width: 850px;
     max-width: 92%;
@@ -172,7 +174,7 @@ body {
 }
 
 .analysis-header {
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
 }
 
 .analysis-header h1 {
@@ -193,7 +195,7 @@ body {
 .analysis-card {
     background: #FBF8F1;
     padding: 50px 55px;
-    border-radius: 24px; 
+    border-radius: 24px;
     box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.08),
         0 10px 25px rgba(0, 0, 0, 0.05);
@@ -210,8 +212,8 @@ body {
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 40px;   
-    row-gap: 30px;     
+    column-gap: 40px;
+    row-gap: 30px;
 }
 
 /* INPUT GROUP */
@@ -222,7 +224,7 @@ body {
 /* Input */
 .input-group input {
     width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     padding: 16px 18px;
     border-radius: 14px;
     border: 1px solid #D6D0C4;
@@ -233,6 +235,8 @@ body {
 
 /* LABEL */
 .input-group label {
+    display: block;
+    text-align: left;
     margin-bottom: 10px;
     font-weight: 500;
     font-size: 14px;
@@ -243,12 +247,14 @@ body {
     outline: none;
     border: 2px solid #283618;
     box-shadow:
-        0 0 0 4px rgba(40,54,24,0.10);
-    transform: translateY(-2px); /* subtle lift */
+        0 0 0 4px rgba(40, 54, 24, 0.10);
+    transform: translateY(-2px);
+    /* subtle lift */
 }
 
 /* BUTTON */
 .analysis-button {
+    margin-top: 30px;
     padding: 15px 35px;
     border-radius: 30px;
     border: none;
@@ -257,7 +263,7 @@ body {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .analysis-button:hover {
@@ -298,7 +304,7 @@ body {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .cta-secondary:hover {
@@ -394,14 +400,14 @@ body {
 }
 
 .chart-card {
-    max-width: 750px;     
-    margin: 0 auto;       
+    max-width: 750px;
+    margin: 0 auto;
 }
 
 .chart-card img {
     width: 100%;
-    max-height: 420px;   
-    object-fit: contain;  
+    max-height: 420px;
+    object-fit: contain;
     border-radius: 16px;
     margin-top: 20px;
 }
