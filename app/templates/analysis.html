@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Market Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>Housing Intelligence</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/analysis">Analysis</a>
+    </div>
+</div>
+
+<div class="analysis-wrapper">
+    <div class="analysis-container">
+
+        <!-- PAGE TITLE + SUBTITLE -->
+        <div class="analysis-header">
+            <h1>Market Analysis Input</h1>
+            <p>Enter regional parameters to generate housing insights.</p>
+        </div>
+
+        <!-- FORM CARD -->
+        <div class="analysis-card">
+            <form action="/predict" method="POST">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Median Income</label>
+                        <input type="number" step="any" name="MedInc"
+                               placeholder="$ (thousands)" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>House Age</label>
+                        <input type="number" step="any" name="HouseAge"
+                               placeholder="Years" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Average Rooms</label>
+                        <input type="number" step="any" name="AveRooms"
+                               placeholder="e.g. 6.5" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Average Bedrooms</label>
+                        <input type="number" step="any" name="AveBedrms"
+                               placeholder="e.g. 1.2" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Population</label>
+                        <input type="number" step="any" name="Population"
+                               placeholder="Total residents" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Average Occupancy</label>
+                        <input type="number" step="any" name="AveOccup"
+                               placeholder="Residents per household" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Latitude</label>
+                        <input type="number" step="any" name="Latitude"
+                               placeholder="e.g. 34.05" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Longitude</label>
+                        <input type="number" step="any" name="Longitude"
+                               placeholder="e.g. -118.24" required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="analysis-button">
+                    Run Market Analysis
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+</div>

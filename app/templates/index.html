@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Housing Intelligence Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>Housing Intelligence</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#market">Market</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>Transforming Real Estate Insights Into Actionable Intelligence</h1>
+        <p>
+            Predict housing prices and analyze regional clusters 
+            with intelligent data-driven insights.
+        </p>
+        <a href="/analysis">
+            <button class="cta-button">Run Market Analysis</button>
+        </a>
+    </div>
+</div>
+
+<div class="section" id="about">
+    <h2>About Real Estate Analytics</h2>
+    <div class="info-grid">
+        <div class="info-card">
+            <img src="{{ url_for('static', filename='images/suburban.jpg') }}">
+            <h3>Suburban Growth</h3>
+            <p>Suburban regions experience moderate growth driven by balanced income levels and population density.</p>
+        </div>
+        <div class="info-card">
+            <img src="{{ url_for('static', filename='images/coastal.jpg') }}">
+            <h3>Coastal Premium</h3>
+            <p>Coastal housing markets typically show higher valuation due to geographic advantage and demand.</p>
+        </div>
+        <div class="info-card">
+            <img src="{{ url_for('static', filename='images/analytics.jpg') }}">
+            <h3>Data Intelligence</h3>
+            <p>Machine learning models analyze socio-economic indicators to forecast property values accurately.</p>
+        </div>
+    </div>
+</div>
+
+<!-- MARKET INSIGHTS -->
+<div class="section" id="market">
+    <h2>Market Insights</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+        Housing prices are influenced by median income, occupancy rate, population density,
+        and geographic positioning. Our analytical models group regions into clusters
+        that reflect socio-economic similarities, helping investors and residents understand
+        where a property stands in the broader housing ecosystem.
+    </p>
+</div>
+
+<!-- CTA SECTION -->
+<div class="cta-section">
+    <div class="cta-content">
+        <h2>Ready to Analyze a Region?</h2>
+        <p>
+            Input regional parameters and receive intelligent price 
+            and cluster predictions powered by machine learning.
+        </p>
+        <a href="/analysis">
+            <button class="cta-secondary">Go to Market Analysis</button>
+        </a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <div class="footer-content">
+        <h3>Contact</h3>
+        <p>Email: info@housingintelligence.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <p>California, USA</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Region Analysis Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="prediction-wrapper">
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+            <h1>Region Analysis Dashboard</h1>
+        </div>
+
+        <div class="dashboard-grid">
+
+            <!-- Price Prediction Card -->
+            <div class="dashboard-card">
+                <h2>Price Prediction</h2>
+                <div class="result-item">
+                    <span class="result-label">Estimated Median Value</span>
+                    <span class="result-value">${{ price }}</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Price Category</span>
+                    <span class="result-value">{{ category }}</span>
+                </div>
+            </div>
+
+            <!-- Cluster Card -->
+            <div class="dashboard-card">
+                <h2>Cluster Analysis</h2>
+                <div class="result-item">
+                    <span class="result-label">Cluster ID</span>
+                    <span class="result-value">{{ cluster }}</span>
+                </div>
+                <p class="cluster-description">
+                    {{ cluster_description }}
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Chart Card -->
+        <div class="dashboard-card chart-card">
+            <h2>Market Position Visualization</h2>
+            <img src="{{ url_for('static', filename='plots/user_analysis.png') }}" 
+                 alt="Market Position Graph">
+        </div>
+
+        <div class="dashboard-back">
+            <button href="/analysis" class="analysis-button">
+                Analyze Another Region
+            </button>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
