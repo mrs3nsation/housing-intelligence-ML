@@ -6,15 +6,11 @@ from utils import generate_bubble_chart
 
 app = Flask(__name__)
 
-# ------------------------------
 # Safe Path Handling
-# ------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODELS_DIR = os.path.join(BASE_DIR, "..", "models")
 
-# ------------------------------
 # Load Models
-# ------------------------------
 regression_data = joblib.load(os.path.join(MODELS_DIR, "regression_model.pkl"))
 classification_data = joblib.load(os.path.join(MODELS_DIR, "classification_model.pkl"))
 clustering_data = joblib.load(os.path.join(MODELS_DIR, "clustering_model.pkl"))
@@ -29,9 +25,7 @@ classification_model = classification_data["model"]
 clustering_model = clustering_data["model"]
 cluster_features = clustering_data["features"]
 
-# ------------------------------
 # ROUTES
-# ------------------------------
 
 @app.route("/")
 def home():

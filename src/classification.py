@@ -35,18 +35,14 @@ def train_classification_models(
     os.makedirs("models", exist_ok=True)
     os.makedirs("reports/figures", exist_ok=True)
 
-    # -----------------------------------
     # 1. Logistic Regression
-    # -----------------------------------
     log_model = LogisticRegression(max_iter=1000)
     log_model.fit(X_train_scaled, y_train_cls)
 
     val_pred_log = log_model.predict(X_val_scaled)
     acc_log = accuracy_score(y_val_cls, val_pred_log)
 
-    # -----------------------------------
     # 2. Decision Tree
-    # -----------------------------------
     dt_model = DecisionTreeClassifier(
         max_depth=10,
         random_state=42
@@ -56,9 +52,7 @@ def train_classification_models(
     val_pred_dt = dt_model.predict(X_val_scaled)
     acc_dt = accuracy_score(y_val_cls, val_pred_dt)
 
-    # -----------------------------------
     # 3. Random Forest
-    # -----------------------------------
     rf_model = RandomForestClassifier(
         n_estimators=100,
         max_depth=15,
@@ -74,9 +68,7 @@ def train_classification_models(
     print(f"Validation Accuracy - Decision Tree: {acc_dt:.4f}")
     print(f"Validation Accuracy - Random Forest: {acc_rf:.4f}")
 
-    # -----------------------------------
     # Model Selection
-    # -----------------------------------
     val_accuracies = {
         "logistic": acc_log,
         "decision_tree": acc_dt,
@@ -94,9 +86,7 @@ def train_classification_models(
 
     print(f"Selected Model: {best_model_name}")
 
-    # -----------------------------------
     # Final Test Evaluation
-    # -----------------------------------
     test_pred = best_model.predict(X_test_scaled)
 
     acc_test = accuracy_score(y_test_cls, test_pred)
@@ -110,9 +100,7 @@ def train_classification_models(
     print(f"Recall: {recall:.4f}")
     print(f"F1 Score: {f1:.4f}")
 
-    # -----------------------------------
     # Confusion Matrix Plot
-    # -----------------------------------
     cm = confusion_matrix(y_test_cls, test_pred)
 
     plt.figure()
@@ -124,9 +112,7 @@ def train_classification_models(
     plt.savefig("reports/figures/classification_confusion_matrix.png")
     plt.close()
 
-    # -----------------------------------
     # Save Model
-    # -----------------------------------
     joblib.dump(
         {
             "model": best_model,

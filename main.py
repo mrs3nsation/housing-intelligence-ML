@@ -1,5 +1,3 @@
-# main.py
-
 from src.data_loader import load_data
 from src.preprocessing import split_data, scale_features, create_class_labels
 from src.eda import run_eda
@@ -14,9 +12,7 @@ def main():
 
     print("\n========== STARTING PROJECT PIPELINE ==========\n")
 
-    # --------------------------------------------------
     # 1. Load Dataset
-    # --------------------------------------------------
     df = load_data()
 
     if df is None or df.empty:
@@ -24,16 +20,12 @@ def main():
 
     print(f"Dataset loaded successfully. Shape: {df.shape}\n")
 
-    # --------------------------------------------------
     # 2. Exploratory Data Analysis (Full Dataset)
-    # --------------------------------------------------
     print("Running EDA...")
     run_eda(df)
     print("EDA completed.\n")
 
-    # --------------------------------------------------
     # 3. Train / Validation / Test Split (70/15/15)
-    # --------------------------------------------------
     print("Splitting dataset...")
     X_train, X_val, X_test, y_train, y_val, y_test = split_data(df)
 
@@ -45,9 +37,7 @@ def main():
     print(f"Validation size: {len(X_val)}")
     print(f"Test size: {len(X_test)}\n")
 
-    # --------------------------------------------------
     # 4. Feature Scaling (Fit on Training Only)
-    # --------------------------------------------------
     print("Scaling features...")
     X_train_scaled, X_val_scaled, X_test_scaled = scale_features(
         X_train, X_val, X_test
@@ -58,9 +48,7 @@ def main():
 
     print("Feature scaling completed.\n")
 
-    # --------------------------------------------------
     # 5. Create Classification Labels (Using Training Quantiles Only)
-    # --------------------------------------------------
     print("Creating classification labels...")
     y_train_cls, y_val_cls, y_test_cls, q1, q2 = create_class_labels(
         y_train, y_val, y_test
@@ -71,9 +59,7 @@ def main():
     print(f"Medium <= {q2:.3f}")
     print(f"High > {q2:.3f}\n")
 
-    # --------------------------------------------------
     # 6. Regression Phase
-    # --------------------------------------------------
     print("Training Regression models...")
     train_regression_models(
         X_train_scaled,
@@ -86,9 +72,7 @@ def main():
     )
     print("Regression phase completed.\n")
 
-    # --------------------------------------------------
     # 7. Classification Phase
-    # --------------------------------------------------
     print("Training Classification models...")
     train_classification_models(
         X_train_scaled,
@@ -100,9 +84,7 @@ def main():
     )
     print("Classification phase completed.\n")
 
-    # --------------------------------------------------
     # 8. SVM Phase
-    # --------------------------------------------------
     print("Training SVM model...")
     train_svm_model(
         X_train_scaled,
@@ -114,9 +96,7 @@ def main():
     )
     print("SVM phase completed.\n")
 
-    # --------------------------------------------------
     # 9. Neural Network Phase
-    # --------------------------------------------------
     print("Training Neural Network...")
     train_neural_network(
         X_train_scaled,
@@ -128,9 +108,7 @@ def main():
     )
     print("Neural Network phase completed.\n")
 
-    # --------------------------------------------------
     # 10. Clustering Phase
-    # --------------------------------------------------
     print("Training Clustering model...")
     train_clustering_model(
         X_train_scaled,

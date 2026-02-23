@@ -85,9 +85,7 @@ def train_neural_network(
 
     print("\nNeural Network Test Accuracy:", round(test_accuracy, 4))
 
-    # -----------------------------------------
     # Plot Training vs Validation Accuracy
-    # -----------------------------------------
     plt.figure()
     plt.plot(history.history["accuracy"])
     plt.plot(history.history["val_accuracy"])
@@ -99,9 +97,7 @@ def train_neural_network(
     plt.savefig("reports/figures/nn_accuracy.png")
     plt.close()
 
-    # -----------------------------------------
     # Plot Training vs Validation Loss
-    # -----------------------------------------
     plt.figure()
     plt.plot(history.history["loss"])
     plt.plot(history.history["val_loss"])

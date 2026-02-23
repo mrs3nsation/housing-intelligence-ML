@@ -37,7 +37,6 @@ body {
 
 /* HERO */
 /* HERO SECTION */
-/* HERO SECTION */
 .hero {
     position: relative;
     height: 100vh;
@@ -51,7 +50,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35); /* neutral dark overlay */
+    background: rgba(0, 0, 0, 0.35);
 }
 
 .hero-content {
@@ -63,7 +62,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 48px;      /* slightly smaller */
+    font-size: 48px;     
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -173,7 +172,7 @@ body {
 }
 
 .analysis-header {
-    margin-bottom: 50px; /* space between text and form */
+    margin-bottom: 50px; 
 }
 
 .analysis-header h1 {
@@ -194,7 +193,7 @@ body {
 .analysis-card {
     background: #FBF8F1;
     padding: 50px 55px;
-    border-radius: 24px;  /* softer curvature */
+    border-radius: 24px; 
     box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.08),
         0 10px 25px rgba(0, 0, 0, 0.05);
@@ -211,8 +210,8 @@ body {
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 40px;   /* 👈 space between two columns */
-    row-gap: 30px;      /* 👈 space between rows */
+    column-gap: 40px;   
+    row-gap: 30px;     
 }
 
 /* INPUT GROUP */
@@ -223,7 +222,7 @@ body {
 /* Input */
 .input-group input {
     width: 100%;
-    box-sizing: border-box; /* 👈 critical for alignment */
+    box-sizing: border-box; 
     padding: 16px 18px;
     border-radius: 14px;
     border: 1px solid #D6D0C4;
@@ -395,14 +394,14 @@ body {
 }
 
 .chart-card {
-    max-width: 750px;     /* 👈 limits overall chart card width */
-    margin: 0 auto;       /* 👈 center it */
+    max-width: 750px;     
+    margin: 0 auto;       
 }
 
 .chart-card img {
     width: 100%;
-    max-height: 420px;    /* 👈 prevents tall stretching */
-    object-fit: contain;  /* 👈 keeps proportions */
+    max-height: 420px;   
+    object-fit: contain;  
     border-radius: 16px;
     margin-top: 20px;
 }

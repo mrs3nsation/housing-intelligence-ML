@@ -20,9 +20,7 @@ def train_clustering_model(X_train_scaled, X_val_scaled):
     os.makedirs("models", exist_ok=True)
     os.makedirs("reports/figures", exist_ok=True)
 
-    # ------------------------------------------
     # Selected Feature Subset
-    # ------------------------------------------
     cluster_features = [
         "MedInc",
         "Population",
@@ -34,9 +32,7 @@ def train_clustering_model(X_train_scaled, X_val_scaled):
     X_train_cluster = X_train_scaled[cluster_features]
     X_val_cluster = X_val_scaled[cluster_features]
 
-    # ------------------------------------------
     # Elbow Method (Training Set Only)
-    # ------------------------------------------
     inertia_values = []
     K_range = range(2, 9)
 
@@ -55,9 +51,7 @@ def train_clustering_model(X_train_scaled, X_val_scaled):
     plt.savefig("reports/figures/kmeans_elbow.png")
     plt.close()
 
-    # ------------------------------------------
     # Choose K = 3 (Clean and interpretable)
-    # ------------------------------------------
     optimal_k = 3
 
     final_kmeans = KMeans(
@@ -68,17 +62,13 @@ def train_clustering_model(X_train_scaled, X_val_scaled):
 
     final_kmeans.fit(X_train_cluster)
 
-    # ------------------------------------------
     # Silhouette Score (Validation Set)
-    # ------------------------------------------
     val_labels = final_kmeans.predict(X_val_cluster)
     silhouette = silhouette_score(X_val_cluster, val_labels)
 
     print(f"Clustering Silhouette Score (Validation): {silhouette:.4f}")
 
-    # ------------------------------------------
     # PCA for Visualization
-    # ------------------------------------------
     pca = PCA(n_components=2, random_state=42)
     X_train_pca = pca.fit_transform(X_train_cluster)
 
@@ -99,9 +89,7 @@ def train_clustering_model(X_train_scaled, X_val_scaled):
     plt.savefig("reports/figures/kmeans_clusters_pca.png")
     plt.close()
 
-    # ------------------------------------------
     # Save Model + Metadata
-    # ------------------------------------------
     joblib.dump(
         {
             "model": final_kmeans,

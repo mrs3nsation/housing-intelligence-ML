@@ -1,5 +1,3 @@
-# src/svm.py
-
 import os
 import joblib
 from sklearn.svm import SVC
@@ -27,9 +25,7 @@ def train_svm_model(
     best_model = None
     best_config = None
 
-    # -----------------------------------
     # Try Linear Kernel
-    # -----------------------------------
     for C in [0.1, 1, 10]:
 
         model = SVC(kernel="linear", C=C)
@@ -43,9 +39,7 @@ def train_svm_model(
             best_model = model
             best_config = f"Linear (C={C})"
 
-    # -----------------------------------
     # Try RBF Kernel
-    # -----------------------------------
     for C in [0.1, 1, 10]:
 
         model = SVC(kernel="rbf", C=C, gamma="scale")
@@ -62,9 +56,7 @@ def train_svm_model(
     print(f"Best SVM Configuration (Validation): {best_config}")
     print(f"Validation Accuracy: {best_accuracy:.4f}")
 
-    # -----------------------------------
     # Final Evaluation on Test Set
-    # -----------------------------------
     test_pred = best_model.predict(X_test_scaled)
 
     acc_test = accuracy_score(y_test_cls, test_pred)
@@ -78,9 +70,7 @@ def train_svm_model(
     print(f"Recall: {recall:.4f}")
     print(f"F1 Score: {f1:.4f}")
 
-    # -----------------------------------
     # Save Model
-    # -----------------------------------
     joblib.dump(
         {
             "model": best_model,
